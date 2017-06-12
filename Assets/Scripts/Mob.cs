@@ -56,7 +56,7 @@ public abstract class Mob : MonoBehaviour {
 	}
 	private void Eat()
 	{
-		if(Health < MaxHealth * .5f)
+		if(Health < MaxHealth)
 		{
 			Health += Food.ThisFood.TryToEat();
 		}

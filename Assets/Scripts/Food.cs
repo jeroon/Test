@@ -24,7 +24,7 @@ public class Food : MonoBehaviour
 	void Start()
 	{
 		maxAmount = 200;
-		amountToEat = 3;
+		amountToEat = 4;
 		panelText = Panel.GetComponentInChildren<Text>();
 	}
 	void Update()
