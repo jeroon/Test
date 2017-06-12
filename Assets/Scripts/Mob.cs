@@ -68,13 +68,13 @@ public abstract class Mob : MonoBehaviour {
 	protected void AgeTick(object sender, EventArgs e)
 	{
 		Age++;
-		if (Age>20 && Age % 10 == 0 && Food.Amount > 25)
+		if (Age>20 && Age % 10 == 0 && Food.Amount > 50)
 		{
 			Manager.ThisManager.Ready.Add(this);
 		}
 		if (Age >= MaxAge)
 			MobDied();
-		Health--;
+		TakeDamage(1);
 		CheckHealth();
 		
 	}
@@ -85,7 +85,6 @@ public abstract class Mob : MonoBehaviour {
 		if(Health <= 0)
 		{
 			MobDied();
-			Health = 0;
 		}
 	}
 
