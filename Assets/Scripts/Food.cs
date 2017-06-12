@@ -8,12 +8,12 @@ public class Food : MonoBehaviour
 
 	public static Food ThisFood;
 
-	public int Amount { get; private set; }
+	public static int Amount { get; private set; }
 	public Image Panel { get; set; }
 
 	private int maxAmount = 0;
 	private Text panelText;
-	private int amountToEat;
+	public static int amountToEat;
 
 	private void Awake()
 	{
@@ -24,7 +24,7 @@ public class Food : MonoBehaviour
 	void Start()
 	{
 		maxAmount = 200;
-		amountToEat = 4;
+		amountToEat = 1;
 		panelText = Panel.GetComponentInChildren<Text>();
 	}
 	void Update()

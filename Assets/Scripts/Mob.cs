@@ -56,7 +56,7 @@ public abstract class Mob : MonoBehaviour {
 	}
 	private void Eat()
 	{
-		if(Health < MaxHealth)
+		if(Health < MaxHealth-Food.amountToEat)
 		{
 			Health += Food.ThisFood.TryToEat();
 		}
@@ -68,7 +68,7 @@ public abstract class Mob : MonoBehaviour {
 	protected void AgeTick(object sender, EventArgs e)
 	{
 		Age++;
-		if (Age>20 && Age % 10 == 0)
+		if (Age>20 && Age % 10 == 0 && Food.Amount > 25)
 		{
 			Manager.ThisManager.Ready.Add(this);
 		}
